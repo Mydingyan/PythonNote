@@ -89,6 +89,8 @@ print("集合类型", s)
 print("空{}", type({}))
 print("空set", type(set()))
 
+
+
 '''
 数据类型转变
 '''
