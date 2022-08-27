@@ -249,3 +249,12 @@ del my_list7[1:5:2]  #删除指定长度列表
 print("按步长删除:",my_list7)
 
 del my_list7   #删除整个列表
+
+
+#列表元素检测（判断元素在列表中是否存在，返回True和False
+
+my_list9 = [1,[3,5,"python"],3,(3,6),888]
+print(1 in my_list9)   #返回True
+print("1" in my_list9)   #返回False
+print([3,5,'python'] in my_list9)
+print((3,6) in my_list9)   #True
