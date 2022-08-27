@@ -118,4 +118,134 @@ print(str_8.replace("auto","Auto"))
 
 
 
-# 分切与连接
+# 字符串分切
+#方法：split(sep,[maxsplit]) ，切完成后，字符串变成列表
+#（只要输入点，出来的都是字符串对象的方法）
+
+print("leboleboleboleboxueyuan".split('l'))   #方式1：l切后的字符消失
+print("lebo,lebo,lebo,leboxueyuan".split(','))  #方式2：逗号间隔符消失
+print("lebo,lebo,lebo,leboxueyuan".split(',',1)) #方式3:切割次数1次表示只匹配1次
+
+
+#字符串删减
+str_11 = '   124124 124124 5125125     '
+print('++++'+str_11.strip()+'++++')   # 去除字符串前后的空格
+
+print('++++'+str_11.lstrip()+'++++')   # 去除字符串左边的空格
+print('++++'+str_11.rstrip()+'++++')   # 去除字符串右边的空格
+
+print(len(str_11))  #除去空格之前29个字符
+print(len(str_11.strip()))  #除去空格之后21个字符
+
+
+#字符串填充
+str_12 = 'leboautotest'
+print(str_12.zfill(111))   #将字符串长度用0补充至111位
+
+#字符串格式化输出
+school  = '演讲学院'
+name = '孙策'
+age = 25
+
+#格式化输出方法1
+print("我叫"+name+',今年'+str(age)+"岁,我在"+school+"学习自动化测试")
+
+#格式化输出方法2  (最新且最简单的方法）
+print(f"我叫{name},今年{age}岁,我在{school}学习自动化测试")
+
+#格式化输出方法3
+print("我叫%s,今年%s岁,我在%s学习自动化测试"%(name,age,school))
+
+#格式化输出方法4
+print("我叫{},今年{}岁,我在{}学习自动化测试".format(name,age,school))
+
+print("=====格式化输出精简小数点位数")
+weight = 121.12456
+print("商品的重量为:%f"%(weight))
+print("商品的重量为:%10.3f"%(weight))  #%5.2 表示整数位可以占5个字符，小数点位可以占2个字符
+
+
+
+
+#### 整数输出
+
+'''
+- % d
+
+- 左补空格
+
+% 3
+d意思是打印结果为3位整数，当整数的位数不够3位时，在整数左侧补空格
+
+- 右补空格
+
+% -3
+d意思是打印结果为3位整数，当整数的位数不够3位时，在整数右侧补空格
+
+- 左侧补零
+
+% 05
+d意思是打印结果为5位整数，当整数的位数不够5位时，在整数左侧补0
+
+'''
+
+age = 9
+print('格式化1结果:%d,格式化2结果:%3d,格式化3结果:%-3d,格式化4结果:%03d' % (age, age, age, age))
+
+
+#列表
+my_list = []   #创建列表
+my_list = [1,2,3]
+my_list = [1,[2,3,5,["python"],1.444],3,(3,5)]  # 列表中可以嵌套列表、元组
+
+print(my_list[1][3])  #列表中的列表嵌套切片，注意从0开始
+print(my_list[3])  #列表中的元组也可以切片
+
+
+#列表切片
+print(my_list[1:2])
+print(my_list[1:4:2][0][3][0])  #切片后，从新的列表中继续切片，取出python字符串
+
+
+#通过切片修改切片中的内容
+my_list = [1,[2,3,5,["python"],1.444],3,(3,5)]
+print(my_list)
+my_list[2] = '乐博学院'   #修改列表中的元组
+print(my_list)
+
+
+# 列表中添加元素
+print(my_list)
+my_list.append("这是列表新增的字符串")  #新增1个元素
+print(my_list)
+my_list.append(["好好学习","天天向上"])  #新增一个列表
+print(my_list)
+
+my_list.insert(1,"指定位置新增") #新增至列表第一个元素
+print(my_list)
+
+
+#两个列表合并、串联
+
+my_list4 = ['a','b','c']
+my_list5 = [1,2,4]
+
+my_list6 = my_list4 + my_list5   #合并两个列表为一个
+print(my_list6)
+print(my_list4,my_list5)     #列表串联，输出两个列表
+print([my_list4,my_list5])   #将两个列表合并为新列表中的元素
+
+
+#列表元素删除
+my_list7 = [1,2,3,4,5,6,7,8,9,10]
+print(my_list7)
+del my_list7[2]  #删除指定位置的元素，从0开始
+print("删除某个元素：",my_list7)
+
+del my_list7[1:5]  #删除指定长度列表
+print("删除指定长度列表:",my_list7)
+
+del my_list7[1:5:2]  #删除指定长度列表
+print("按步长删除:",my_list7)
+
+del my_list7   #删除整个列表
