@@ -261,13 +261,36 @@ print((3,6) in my_list9)   #True
 
 
 ### 遍历列表
-
-for it in my_list9:    # it表示申明的变量
+for it in my_list9:    # it表示申明的变量，可以是任意自定义名称
     print(it)
 
 ### 列表推导式
 # 从现有列表中 创建出新列表
-list_old = [1,2,3,4,5,6,7,8]
+list_old = [1,2,3,4,5,6,7,8,'3吖阿啊']
 
-list_new = [it for it in list_old]  #两边的it必须相同，意思是从
+print("=====列表推导式方式一：直接输出原列表")
+list_new = [it for it in list_old]  #两边的it必须相同，第一个it是引用（不懂的话看19节7分钟开始的位置）
 print(list_new)
+
+print("=====列表推导式方式二：运算符号")
+list_new = [it*2 for it in list_old]  #it*2表示所有数字值*2，字符串就输出两边
+print(list_new)
+
+list_old = [1,2,3,4,5,6,7,8]
+print("=====列表推导式方式三：if判断")
+list_new = [it for it in list_old if it<3]  #输出小于5的值，不能有中文
+print(list_new)
+
+
+list_old = [1,2,3,4,5,6,7,8]
+print("=====列表推导式方式三：if判断取出偶数")
+list_new = [it for it in list_old if it%2 ==0]  #取数偶数
+print(list_new)
+
+
+print("=====此方法就是等价于列表推导式方法二")
+list_new = []
+for n in list_old:
+    list_new.append(n*2)
+print(list_new)
+
