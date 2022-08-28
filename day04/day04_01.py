@@ -251,10 +251,23 @@ print("按步长删除:",my_list7)
 del my_list7   #删除整个列表
 
 
-#列表元素检测（判断元素在列表中是否存在，返回True和False
+#列表元素判断（判断元素在列表中是否存在，返回True和False
 
 my_list9 = [1,[3,5,"python"],3,(3,6),888]
 print(1 in my_list9)   #返回True
 print("1" in my_list9)   #返回False
 print([3,5,'python'] in my_list9)
 print((3,6) in my_list9)   #True
+
+
+### 遍历列表
+
+for it in my_list9:    # it表示申明的变量
+    print(it)
+
+### 列表推导式
+# 从现有列表中 创建出新列表
+list_old = [1,2,3,4,5,6,7,8]
+
+list_new = [it for it in list_old]  #两边的it必须相同，意思是从
+print(list_new)
