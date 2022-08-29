@@ -261,15 +261,16 @@ print((3,6) in my_list9)   #True
 
 
 ### 遍历列表
-for it in my_list9:    # it表示申明的变量，可以是任意自定义名称
-    print(it)
+for it in my_list9:    # 第一个it表示申明的变量，  可以是任意自定义名称(与列表推导方式一是同一个意思，就是简写的方法）
+    print(it)   # 这里的是第二个it,
 
 ### 列表推导式
+# 列表推导式可以解决
 # 从现有列表中 创建出新列表
 list_old = [1,2,3,4,5,6,7,8,'3吖阿啊']
 
-print("=====列表推导式方式一：直接输出原列表")
-list_new = [it for it in list_old]  #两边的it必须相同，第一个it是引用（不懂的话看19节7分钟开始的位置）
+print("=====列表推导式方式一：直接输出原列表")   #
+list_new = [it for it in list_old]  #遍历旧(it)的添加到新(it)的里面去   两边的it必须相同，第一个it是引用，第二个it是定义（不懂的话看19节7分钟开始的位置）
 print(list_new)
 
 print("=====列表推导式方式二：运算符号")
@@ -278,7 +279,7 @@ print(list_new)
 
 list_old = [1,2,3,4,5,6,7,8]
 print("=====列表推导式方式三：if判断")
-list_new = [it for it in list_old if it<3]  #输出小于5的值，不能有中文
+list_new = [it for it in list_old if it<3]  #输出小于5的值（it判断的值不能为中文）
 print(list_new)
 
 
@@ -295,11 +296,28 @@ for n in list_old:
 print(list_new)
 
 
+### 列表元素刪除：根据索引来删除
+print("=====列表元素删除案例1：按索引进行删除.pop()方法")
+list_old = [1,2,3,4,5,6,7,8]
+print("列表元素刪除前",list_old)
+print(list_old.pop())  #刪除元素,默认删除最后一位
+print(list_old)
+print(list_old.pop(2))  #输入列表元素索引进行删除
+print(list_old)
+
+### 列表元素删除：根据值来删除（remove是唯一一个只根据值来删除的方法）
+print("=====列表元素删除案例2：按元素进行删除.remove()")
+my_list8 = [1,2,3,4,'根据值删除',5,6,7,8,'st']
+my_list8.remove("根据值来删除")
+print(my_list8)
+
+
 ## 更多Python列表方法
 '''
 Python 有许多有用的列表方法，它们可以非常轻松地处理列表。
 以下是一些常用的列表方法。
-语法:
+
+字符串操作的语法:
 字符串.方法
 
 | 方法      | 描述                                 |
