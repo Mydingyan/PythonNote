@@ -109,63 +109,28 @@ print("max:",max(my_t4))
 print("min:",min(my_t4))
 
 
-print('=====元组内可变的元素======')
 # 元组内的可变元素
+print('=====元组内只能修改元组中的可变的元素（比如列表，修改后元组的内存地址不变），但不能修改元组内的值======')
 my_t6 = ('loveme',[1,2,3,4,5],("python",'345','自动化'))
+# my_t6[1] = [1,2,3]   #  修改元组的元素会报错，（元祖的元素不可改变） TypeError: 'tuple' object does not support item assignment
 
-# 元祖的元素不可改变
-# my_t6[1] = [1,2,3]   #TypeError: 'tuple' object does not support item assignment
-
+print('=====案例一：元组内元素不可改变，但元素中的列表可以修改======')
 print("修改之前的列表地址",id(my_t6[1]))
 my_t6[1][2] = 'fix'    #元组中的值不可修改，但元组中的列表可以修改
 print("修改后的 列表 地址",id(my_t6[1]))   # 修改后的元组，内存地址不变
 print("元组内的可变元素",my_t6)
 
+print('=====案例二：元组内元素不可删除案例======')
 my_t6 = ('loveme',[1,2,3,4,5],("python",'345','自动化'))
-after_pop = my_t6[1].pop   #.pop表示删除
-print("after_pop:",after_pop)
+after_pop = my_t6[1].pop   #.pop表示删除最后一个元素      产生了新的列表，而元组记录的是原来的列表
+print("after_pop:删除后",after_pop)
 print("元组内的可变元素",my_t6)    # 删除前与删除后无变化，内存地址也无变化
 print("after_pop:",after_pop)
 
 
-'''
-字典
-自解释数据类型
-json 格式 
+# 元组定义及进阶操作
+# 1. 不同数据类型使用元组， 相似数据类型使用列表
+# 2. 元组的遍历速度比列表快
+# 3. 常量，可以放在元组中
 
-| 方法                   | 描述                                                         |
-| :--------------------- | :----------------------------------------------------------- |
-| clear()                | 从字典中删除所有项                                           |
-| copy()                 | 返回字典的浅拷贝副本                                         |
-| fromkeys(seq[, value]) | 返回一个新字典，以序列 **seq** 中元素做字典的键，**value** 为字典所有键对应的初始值。 |
-| get(key[,d])           | 返回键的值。如果键不存在，则返回**d**(默认为 **None**)       |
-| items()                | 以**(keys,value)**格式返回字典中的每一项                     |
-| keys()                 | 返回字典中的所有键key                                        |
-| pop(key[,d])           | 删除带有key的项并返回其值或如果未找到key，则返回 d如果未提供d且未找到key，则会引发错误KeyError。 |
-| popitem()              | 删除并返回任意项**(key,value)**。如果字典为空，则引发错误KeyError。 |
-| setdefault(key[,d])    | 如果key在字典中，则返回相应的值value。如果没有，则插入值为d的key并返回d（默认为None）。 |
-| update([other])        | 使用其他键/值对更新字典，覆盖现有键。                        |
-| values()               | 返回字典中的所有值value                                      |
 
-'''
-
-my_d = {"name":"刘备",
-        "age":44,
-        "high":177
-        }
-
-print("=====列表与字典的转换：案例1")
-# 输入dict，可以将列表嵌套的元组转换成字典
-my_d8 = dict(
-    [("iphone10",5000),
-     ("iphone11",6000),
-     ("iphone12",7000)])
-print(my_d8)
-
-print("=====列表与字典的转换：案例2")
-# 输入dict，可以将列表嵌套的元组转换成字典
-my_d9 = dict([
-    ["hone10",500],
-    ["hone11",600],
-    ["hone12",700]])
-print(my_d9)
