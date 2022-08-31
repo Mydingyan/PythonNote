@@ -10,7 +10,7 @@
 '''
 def：表示关键字
 function_name()：标识符，起名字用的，可以给变量、函数、类、对象起名字  ()也是必须的，可以为空
-page:参数
+page:参数，可以是一个多个
 
 def function_name(para):
     stataments（执行语句，可以有多行）
@@ -33,7 +33,7 @@ pritn_int()
 #print(pritn_int())   # None
 
 '''
-两个函数之间，不能相互调用
+两个函数之间，不能相互调用    (会形成死循环）
 普通函数自己，不要调用自己
 
 def function_name(para):
@@ -47,10 +47,11 @@ function_name()
 # return语句
 
 print("=====摄氏度转换为华氏度=====")
-def converter999(c):  #c 形式参数
+def converter999(c):  #c 形式参数（只是个代表可以是任意值，用c来代替将来真正传的值）
     f = c * 9/5 +32
     #返回结果
-    return str(f) + "F"
+    return str(f) + "F"    #浮点数不能与字符串相加，需要转换
+    # return "沙糖桔"
 
 ff = converter999(1111)
 print("转换后的华氏度为:",ff)
@@ -65,8 +66,9 @@ aa = ceshi(10)
 print("aa的值是：",aa)
 
 #按照从大到小顺序排列两个数字
-#函数可以又多个return
+#函数可以有多个return
 #一旦运行了return，那么函数代码就结束了
+
 def a(x=5,y=5):
     print("x = ",x,"y = ",y)
     if x >y:
