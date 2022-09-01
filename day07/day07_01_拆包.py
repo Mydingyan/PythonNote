@@ -8,13 +8,85 @@
 '''
 拆包：
 解压序列（元组、列表、字典），分别赋值给多个变量
+
+个人注释： 可以用于接口参数化、参数传递、读取外部文件
 '''
 
-#拆包的过程
+## 获取变量的原始方法
 pack = (1,5)
-pack = 1,5
-apple =5,6,7
-apple = [5,6,"列表"]
+a = pack[0]
+b = pack[1]
+print("获取ab变量值的原始方法：",a,b)
 
-dic = {"user":"123456","pwd"}
+#新获取变量的方法
+#拆包的过程
 
+print("=====拆包的方法1：元组拆包=====")
+pack = (1,5)
+apple = 1,6,6,7,8,9  #不加括号的元组，也可以拆包
+liebiao = [412,"adffs",'fdsfa']
+
+a,b = pack
+a,b,c,d,e,f = apple  #等号后的变量名称一一对应即可  ，元组中有多少变量，也要声明多有变量
+print("a的值：",str(a)+"。b的值：",b)
+print("a,b,c,e,d,f的值：",a,b,c,d,e,f)
+
+print("=====拆包的方法1：列表拆包=====")
+# 列表拆包
+aa,bb,cc = liebiao
+print("列表的拆包:",aa,bb,cc)
+
+
+print("=====拆包的方法1：字典拆包=====")
+dic = {"user":"abc123",
+     "pwd":"123456",
+     "level":8}
+a,b,c = dic
+print("字典的拆包",a,b,c)   #拆出的是字典的Key
+
+
+# 已拆包的形式，给多个变量赋值
+print("=====元组拆包方法2：已拆包的形式，给多个变量赋值=====")
+a,b,c = 5,6,7
+print("a:",a,"   b:",b,"    c:",c)
+
+
+## 通过return返回多个值的函数进行拆包
+print("=====元组、列表拆包方法3：回多个值的函数进行拆包=====")
+def get_my_info():
+    high = 178
+    weight = 100
+    age =18
+    return high,weight,age   #返回的多个值是元组
+    #return [high,weight,age]   #中括号括起来就是列表
+
+
+#res = get_my_info()
+h,w,a = get_my_info()   #通过方法2得知，可以给多个变量进行赋值，元组正好可以直接赋值
+#print(type(res))
+print(h,w,a)
+
+
+print("=====字典拆包方法3：回多个值的函数进行拆包=====")
+def get_my_info():
+    r = {
+    'high' : 178,
+    'weight' : 100,
+    'age' : 18
+    }
+
+    # eturn r   #拆出来key
+    return r.values()  # 拆出来的是值
+
+h,w,a = get_my_info()
+print(h,w,a)
+
+
+
+
+# 新知识点：通配符
+oredr = ("computer",2, 8000,(2022,4,10))
+
+*_,data_str = order
+# *head,date_str = oredr
+print(date_str)
