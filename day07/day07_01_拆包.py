@@ -88,23 +88,44 @@ print(h,w,a)
 print("=====通配符： 格式：*字符串,字符串（可以为多个）=====")
 order = ("computer",2,8000,(2022,4,10))
 
-# *_,a = order    # *号开头任意+逗号+字符
-# *head,date_str = order
-# *head,price,date_str = order
+print("=====通配符标准格式：方式一=====")
+*_,date_str = order    # 标准格式，可以把元组中的日期拆出来
+print("拆出来的是元组日期：",date_str)  # 拆出来元组中的日期
+
+print("=====通配符标准格式：方式二=====")
+*head,date_str = order
+print("head方法中拆出来的值：",head)  # 拆出来元组中的日期
+
+print("=====通配符标准格式：方式三=====")
+*head,price,date_str = order
+print("拆出来的是价格：",head)  # 拆出8000
+
+print("=====通配符标准格式：方式四(星号是必须的）=====")
+name,*lost,price,date_str = order    #四个元素位置必须对应（类似不定长参数）
+print("拆除剩下的参数：",lost)  # 拆除剩下的参数
+
+
+# 不定长参数中，
+
+
+
+
+
+
+
 # name,*lost,price,date_str = order
 
-print("name:",order)  #元组
-print(type(order))   #元组
-
-
-# 位置必须对应
-name,*lost,date_str,price = order
-
-# 不定长参数中 可变参数 必须放在最后
-
-print("name",name)
-print("price:",price)
-print("date_str",date_str)
+# print(type(order))   #元组
+#
+#
+# # 位置必须对应
+# name,*lost,date_str,price = order
+#
+# # 不定长参数中 可变参数 必须放在最后
+#
+# print("name",name)
+# print("price:",price)
+# print("date_str",date_str)
 
 
 
