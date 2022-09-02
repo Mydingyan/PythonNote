@@ -85,8 +85,26 @@ print(h,w,a)
 
 
 # 新知识点：通配符
-oredr = ("computer",2, 8000,(2022,4,10))
+print("=====通配符： 格式：*字符串,字符串（可以为多个）=====")
+order = ("computer",2,8000,(2022,4,10))
 
-*_,data_str = order
-# *head,date_str = oredr
-print(date_str)
+# *_,a = order    # *号开头任意+逗号+字符
+# *head,date_str = order
+# *head,price,date_str = order
+# name,*lost,price,date_str = order
+
+print("name:",order)  #元组
+print(type(order))   #元组
+
+
+# 位置必须对应
+name,*lost,date_str,price = order
+
+# 不定长参数中 可变参数 必须放在最后
+
+print("name",name)
+print("price:",price)
+print("date_str",date_str)
+
+
+
