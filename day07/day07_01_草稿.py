@@ -1,7 +1,7 @@
 # -*- coding:utf-8 _*-
 """
 @author:Yan-PC
-@file: day07_02_草稿.py
+@file: day07_01_草稿.py
 @time: 2022/9/2 22:54
 """
 
