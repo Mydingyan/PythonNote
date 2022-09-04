@@ -23,17 +23,19 @@
 '''
 
 # 导入关键字具体方法
-
+# 从模块中导入
+# 从包中导入
 
 #1. 同目录下导入
 # 方法一:直接导入，导入同目录下模块中的对象
-import  util.main_module
-util.main_module.print_msg()   #调用函数
-print(util.main_module.LANGUAGE)  #调用变量
+# import  util.main_module
+# util.main_module.print_msg()   #调用函数
+# print(util.main_module.LANGUAGE)  #调用变量
 
 
 # 方法二： 导入同目录下的对象
-# import main_modul_001 as mm   #导入文件名可以重命名
+# 这种方法导入时，会运行导入文件中的所有代码
+import main_modul_001 as mm   #导入文件名可以重命名
 # mm.print_msg_001()
 # print(mm.SYSTEM)  #可以使用导入对象中的变量
 
@@ -47,8 +49,16 @@ print(util.main_module.LANGUAGE)  #调用变量
 
 
 # 方法二：导入同目录下的对象
-from util import main_module as mm   #方导入法一：
-mm.print_msg()   #调用函数
-print(mm.LANGUAGE)  #调用变量
+# from util import main_module as mm   #方导入法一：
+# mm.print_msg()   #调用函数
+# print(mm.LANGUAGE)  #调用变量
 
+
+# main 函数  假的main函数
+
+# __name__，python系统设置的变量
+# 导入的模块运行  __name__ 等于模块名
+# 模块内运行，__name__ 等于__main__
+import main_modul_001 as mm   #导 入是，会运行除了__name__函数下的所有代码
+#if __name__ == '__main__':  判断语句，防止被导入时运行
 
