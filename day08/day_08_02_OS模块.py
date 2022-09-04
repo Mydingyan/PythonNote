@@ -84,4 +84,6 @@ print(full_file)
 
 
 # 提取文件名
-file_name =  os.path.gasename
+file_name =  os.path.basename(r"C:\Users\Administrator\PythonNote\day08\test_case\main_modul_001.py")   #方法一
+# file_name = os.path.split(r"C:\Users\Administrator\PythonNote\day08\test_case\main_modul_001.py")[1]   #方法二
+print(file_name)
