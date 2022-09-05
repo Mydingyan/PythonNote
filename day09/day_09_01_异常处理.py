@@ -5,6 +5,30 @@
 @time: 2022/9/4 16:49
 """
 
+# from day_09_02_对象和类 import ArtDesigner
+# art_wang = ArtDesigner()  # 实例化对象才能调用
+# art_wang.draw_picture()
+
+'''
+
+异常处理
+## 常见异常总结（八大报错）
+
+**1.SynataxError:**语法错误
+**2.NameError:**试图访问的变量名不存在
+**3.IndexError:**索引错误,使用的所以你不存在,常为索引超出序列范围
+**4.KeyError:**使用了映射中不存在的关键字(键)时引发的关键字错误
+**5.TypeError:**类型错误,内建操作或是函数应于在错误类型的对象时会引发类型错误
+**6.ValueError:**值错误,传给对象的参数类型不正确,例如给int()函数传入了字符串数据类型
+**7.AttributeError:**属性错误,特性引用和赋值失败时会引发属性错误
+**8.IOError:**输入输出错误
+
+异常不局限于以上八中,这只是很常见的八种异常
+
+'''
+
+
+
 # 异常处理
 
 # print("======before======")
@@ -20,7 +44,7 @@ try:
     open(r"../day07/文件操作附件/产品.txt")  # 存在的文件
     print("======after======")
 except(TypeError,KeyError):
-    print("TypeError字符类型,KeyError键 错误")
+    print("TypeError字符类型,KeyError键 错误")   #错误分组
 except (IOError,NameError):   #错误分组，可以写已知报错，被except接收异常（也可以写单个）
     print("IOError,NameError错误，文件路径未找到，请检查文件路径")
 except:    #除了IOError这种错误，其他异常都提示这个
@@ -83,7 +107,7 @@ def test1():    #发生异常的函数
     print(num)   #使用没有定义的变量报错
 
 
-def test2():
+def test2():   #调用test1
     print("test--2   start")
     test1()
     print("test--2   end")
@@ -93,8 +117,11 @@ def test3():    #调用test1
     try:
         test1()
     except Exception as result:
-        print("捕获到异常，异常为\n",result)
+        print("捕获到异常，异常为:",result)
     print("test--3")
 
 
-test3()
+test3()  # 捕获到异常，异常为: name 'num' is not defined
+#test2() # 未捕获到异常
+
+
