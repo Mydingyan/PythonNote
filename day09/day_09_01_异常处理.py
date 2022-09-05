@@ -85,7 +85,7 @@ def test1():    #发生异常的函数
 
 def test2():
     print("test--2   start")
-    test1(
+    test1()
     print("test--2   end")
 
 
