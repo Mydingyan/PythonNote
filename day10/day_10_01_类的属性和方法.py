@@ -78,6 +78,7 @@ print("类属性增加compay的访问:",art_li.company)    # 实例化方法来�
 # 如果实例 不具有此属性，就是新增
 # 如果实例 具有此属性，就是修改
 
+# 新知识点：初始化方法
 print("=====实例的修改（重新赋值）=====")
 # 真正的实例修改  （用init 初始化方法来创建）
 class ArtDesigner():
@@ -86,7 +87,7 @@ class ArtDesigner():
 
     # 使用初始化init方法来创建  实例属性
     def __init__(self,name88):
-        self.name = name88
+        self.name = name88   #name是变量名
 
     def draw_picture(self):   #方法 （函数）
         print("draw a picture")
@@ -95,8 +96,9 @@ class ArtDesigner():
 
 print("=====实例属性的修改（重新赋值）=====")
 art_wang = ArtDesigner("王富贵")
-art_li = ArtDesigner("李富荣")
-print("art_wang 的 name 属性:",art_wang.name)
+art_li = ArtDesigner("李富荣")    #实例化对象并重新赋值
+
+print("art_wang 的 name 属性:",art_wang.name)  #查看类的属性
 print("art_li 的 name 属性:",art_li.name)
 
 print("=====实例属性的新增=====")
@@ -108,10 +110,25 @@ print("这是新增的属性 wang_salary",art_wang.wang_salary)  # 8888  wang_sa
 
 
 print("=====增加实例属性======")
-art_wang.salary_wang = 5555
+art_wang.salary = 5555
 print("类属性ArtDesigner.salary:",ArtDesigner.salary)  #5000
-print("实例属性art_wang.salary:",art_wang.salary)
-print("类属性art_wang.salary_wang也可以通过实例来访问:",art_li.salary)  #这个是类属性
+print("实例属性art_wang.salary:",art_wang.salary)       #5555   # 这个增加了实例属性
+print("类属性art_wang.salary也可以通过实例来访问:",art_li.salary)  #这个没有增加实例属性，还是用的类属性，所以还是属于类属性
 
 
+# 新只是： 类方法调用函数
+# 类方法 未实例化事前，不能被调用
+# ArtDesigner.draw_picture()  #报错，TypeError
 
+# 类方法可以返回值
+
+res = art_wang.draw_picture()
+print(type(res))
+
+
+# 类方法重写   类里面主要存的都是指针
+def draw_pictur(self):
+    print("我不会画图，买一张去")
+
+ArtDesigner.draw_picture = draw_pictur
+art_wang.draw_picture()
