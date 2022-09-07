@@ -109,7 +109,7 @@ print("这是新增的属性 wang_salary",art_wang.wang_salary)  # 8888  wang_sa
 
 print("=====增加实例属性======")
 art_wang.salary_wang = 5555
-print("类属性ArtDesigner.salary:",ArtDesigner.salary)  #
+print("类属性ArtDesigner.salary:",ArtDesigner.salary)  #5000
 print("实例属性art_wang.salary:",art_wang.salary)
 print("类属性art_wang.salary_wang也可以通过实例来访问:",art_li.salary)  #这个是类属性
 
