@@ -86,8 +86,10 @@ class ArtDesigner():
     salary = 5000  #类属性
 
     # 使用初始化init方法来创建  实例属性
+    # 在实例化时，自动运行
     def __init__(self,name88):
-        self.name = name88   #name是变量名
+        print(f"在实例化{name88}时，自动运行...")
+        self.name = name88   #name是变量名    self 表示会增加一个属性，可以是任意值
 
     def draw_picture(self):   #方法 （函数）
         print("draw a picture")
@@ -103,7 +105,7 @@ print("art_li 的 name 属性:",art_li.name)
 
 print("=====实例属性的新增=====")
 print("动态增加 wang_salary")
-art_wang.wang_salary = 8888
+art_wang.wang_salary = 8888  #具体给某一个赋值
 print("这是新增的属性 wang_salary",art_wang.wang_salary)  # 8888  wang_salary属性只赋给art_wang实例
 # print("这是新增的属性 art_li",art_li.wang_salary)  #AttributeError报错，并没有新增art_li的属性
 
