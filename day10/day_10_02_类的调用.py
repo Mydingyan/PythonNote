@@ -73,5 +73,33 @@ Python 的类中，所有双下划线 包起来的方法  就叫魔法方法（�
 # __dict__
 # 以字典的形式，输出实例属性
 # 属性转换为字典
-# print(user_1.__dict__)   # {'user_name': '张飞', 'password': '123456'}
+print(user_1.__dict__)   # {'user_name': '张飞', 'password': '123456'}
 
+
+
+# 反射  （内置函数的一种）
+
+# hasattr   是否有...（返回True或False)
+
+print(user_1.user_name)   #返回张飞
+print(hasattr(user_1,"user_name"))   # user_1中有user_name属性，返回True
+print(hasattr(user_1,"user_code"))   # user_1中没有user_code属性，返回False
+print(hasattr(user_1,"login"))       #user_1中没有login方法，返回True
+print(hasattr(user_1,"login_out"))    #user_1中没有login_out方法，返回False
+
+
+# getattr  获取对象属性值
+print(user_1.user_name)   #返回张飞
+print(getattr(user_1,"user_name"))   #返回张飞， 与.的方法一直
+print(getattr(user_1,"user_code","属性不存在"))   #如类中没有user_code，返回属性不存在
+
+
+#set 修改对象属性
+print(getattr(user_1,"user_name"))  #修改前，关羽
+setattr(user_1,"user_name","关羽")  #修改user_name元素
+print(getattr(user_1,"user_name"))  #修改后，user_naem为关羽
+
+#delattr 删除属性
+print(getattr(user_1,"user_name","属性不存在"))    #删除前，返回关羽
+delattr(user_1,"user_name")                        #删除user_name元素
+print(getattr(user_1,"user_name","属性不存在"))    #删除后，返回属性不存在

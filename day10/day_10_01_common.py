@@ -32,7 +32,7 @@ class ShopUser():
     def __str__(self):
         return "我是一个用户类"
 
-    def __del__(self):
+    def __del__(self):   #删除方法
         print("对象被删除，做收尾动作")
 
 
