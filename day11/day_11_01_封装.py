@@ -90,3 +90,5 @@ print("年龄改为:",one_man.age)
 
 # 受保护的属性调用
 print("受保护的属性:",one_man._addrss)  #可以调用
+
+
