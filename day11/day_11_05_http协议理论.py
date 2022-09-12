@@ -1,7 +1,7 @@
 # -*- coding:utf-8 _*-
 """
 @author:Yan-PC
-@file: day_11_05_http协议.py
+@file: day_11_05_http协议理论.py
 @time: 2022/9/12 17:13
 """
 
@@ -103,9 +103,12 @@ HTTP状态码列表:
 
 
 
-B/S架构
+B/S架构:基于浏览器/服务器服务
 B--browser 
 S--server
+不用安装任何软件
+![](https://cdn.loveloveme.cn/2022/09/12/631f4780cc851.png)
+
 
 工作原理 
 
