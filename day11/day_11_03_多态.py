@@ -7,7 +7,7 @@
 
 #多态
 # 子类与父类中同名方法, 重写父类方法,就是多态
-
+# 子类中新增父类的方法
 
 #父类
 class Human():
@@ -32,8 +32,9 @@ class ArtDesigner(Human):    # 继承Human
 
     # 重写子类自己的初始化方法
     def __init__(self,name,age,gender,salary):  #增加了一个方法
+
         #通过显式调用父类的初始化方法
-        Human.__init__(Human,name,age,gender)   #调用父类的初始化方法
+        Human.__init__(Human,name,age,gender)   #子类中新增一个参数,必须要写这初始化
         #增加一个子类的实例属性
         self.salary = salary
 
