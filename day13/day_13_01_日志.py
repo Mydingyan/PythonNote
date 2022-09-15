@@ -71,3 +71,43 @@ logging.error("--我是error第四级别")     #可以用到异常处理
 logging.critical("--我是critical最高级别")   #可以用到异常处理中
 
 
+
+# 在屏幕和日志文件同时输出log
+# 用Logger配合多个handler进行复杂处理
+
+
+# 1.定义一个Logger收集器
+logger = logging.getLogger(__name__)
+
+# 2.定义收集log的级别
+logger.setLevel(level = logging.DEBUG)
+
+## 2.1配置信息内容（格式化日志）
+log_format = "%(asctime)s -- %(levelname)s -- %(message)s"
+handler_f = logging.Formatter(log_format)
+
+# 3. 控制台的handler
+console = logging.StreamHandler()
+console.setLevel(level=logging.DEBUG)
+
+# 3.1 控制台格式化输出
+console.setFormatter(handler_f)
+
+# 4.将handler加入到logger
+logger.addHandler(console)
+
+# 5. 日志文件handler       #写入到文件中
+log_file = logging.FileHandler("log2.txt",encoding="UTF-8")
+log_file.setLevel(logging.WARNING)       #WARNING级别
+# 5.1 设置输出格式
+log_file.setFormatter(handler_f)
+
+#5.2 将handler加入到logger
+logger.addHandler(console)
+
+# 6.模拟打印错误日志
+logger.debug("--我是debug最低等级")
+logger.info("--我是Info第二级别")
+logger.warning("--我是warning第三级别")
+logger.error("--我是error第四级别")
+logger.critical("--我是critical最高级别")
