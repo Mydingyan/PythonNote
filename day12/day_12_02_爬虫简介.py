@@ -46,19 +46,52 @@ headers = {
 }
 
 # 1. 访问首页
+#
+# url = "http://bz.0713cms.cn/"
+#
+# # 获取页面
+# res = requests.get(url=url,header=headers,verify=False)
+#
+# # 解析HTML
+# html_bz = html.etree.Html(res.text)   #html库中etree可以解析HTML
+# piclist = html_bz.xpath('//img/@scr')
+#
+# print(piclist)
+#
+#
+# # 2.获取每个壁纸的url
+# for pic in piclist:
+#     pic.split()
 
-url = "http://bz.0713cms.cn/"
+
+
+# 1.访问首页
+# url = "https://bing.ioliu.cn/?p=2"
+
+
+# url = "https://bing.ioliu.cn/?p=2"
+
+for x in range(100):
+    url =f"https://bing.ioliu.cn/?p={x}"
 
 # 获取页面
-res = requests.get(url=url,header=headers,verify=False)
+res = requests.get(url=url, headers=headers, verify=False)
 
-# 解析HTML
-html_bz = html.etree.Html(res.text)   #html库中etree可以解析HTML
-piclist = html_bz.xpath('//img/@scr')
-
+# 解析
+html_b = html.etree.HTML(res.text)
+piclist = html_b.xpath('//img/@src')
 print(piclist)
-
 
 # 2.获取每个壁纸的url
 for pic in piclist:
-    pic.split()
+    try:
+        # 3.修改尺寸
+        pic_url = pic.split("_800")[0] + "_1920x1080.jpg"
+        # 4.请求图片数据
+        pic_res = requests.get(pic_url)
+        t_file ="./picture2/" + pic_url.split("ZH-CN")[1]   # https://bing.ioliu.cn/photo/PyreneesPark_ZH-CN1341030921?force=home_1  PyreneesPark_ZH-CN1341030921?force=home_1
+        # 5.保存图片
+        with open(t_file,"wb") as f:
+            f.write(pic_res.content)
+    except Exception as e:
+        print("获取图片出错\n",e)

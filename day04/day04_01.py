@@ -119,8 +119,8 @@ print(str_8.replace("auto","Auto"))
 
 
 # 字符串分切
-#方法：split(sep,[maxsplit]) ，切完成后，字符串变成列表
-#（只要输入点，出来的都是字符串对象的方法）
+#方法：split(sep,[maxsplit]) ，切完成后，字
+#（只要输入点，出来的都是字符串对象的方法）符串变成列表
 
 print("leboleboleboleboxueyuan".split('l'))   #方式1：l切后的字符消失
 print("lebo,lebo,lebo,leboxueyuan".split(','))  #方式2：逗号间隔符消失
