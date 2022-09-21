@@ -18,7 +18,7 @@ headers = {
 }
 
 # 循环请求
-for val in range(1,10000,1):
+for val in range(100):
     print(f"第{val}次请求")
     response = requests.request("GET", url, headers=headers, data=payload)
     print(response.text)
