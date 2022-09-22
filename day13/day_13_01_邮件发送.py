@@ -1,9 +1,11 @@
 # -*- coding:utf-8 _*-
 """
 @author:Yan-PC
-@file: day_13_01_日志回滚.py
-@time: 2022/9/15 22:51
+@file: day_13_01_邮件发送.py
+@time: 2022/9/22 19:28
 """
+
+from logging.handlers import RotatingFileHandler,SMTPHandler  # 发送邮件
 import logging # python内置日志包
 from logging.handlers import RotatingFileHandler, SMTPHandler   # 回滚需要这个类
 
@@ -48,3 +50,26 @@ logger.info("--我是Info第二级别")
 logger.warning("--我是warning第三级别")
 logger.error("--我是error第四级别")
 logger.critical("--我是critical最高级别")
+
+
+
+
+# 发送邮件
+mail_handler = SMTPHandler(
+    mailhost = ('smtp.126.com',25),
+    fromaddr = 'zhixingtest1008@126.com',
+    toaddrs = "mydingyan@qq.com.com",
+    subject = '自动化测试log',
+    credentials = ("zhixingtest1008@126.com","LQNCTEOHFTIDUUBI")
+)
+
+logger.setLevel(logging.ERROR)
+logger.addHandler(mail_handler)
+
+# 默认是warning
+for i in range(10):
+    logger.warning("have a warning")
+
+
+logger.error("have a errpr")
+logger.critical("have a critical")

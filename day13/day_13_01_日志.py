@@ -46,7 +46,6 @@ import logging  # python内置包
 
 
 
-
 #输出一个debug信息
 #1.输出日期格式
 log_format = "%(asctime)s -- %(levelname)s -- %(message)s"
@@ -111,3 +110,5 @@ logger.info("--我是Info第二级别")
 logger.warning("--我是warning第三级别")
 logger.error("--我是error第四级别")
 logger.critical("--我是critical最高级别")
+
+
