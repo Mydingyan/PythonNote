@@ -35,7 +35,7 @@ console.setFormatter(handler_f)
 logger.addHandler(console)
 
 # 5.日志文件handler回滚
-log_file = RotatingFileHandler("log3.txt",encoding="utf-8",maxBytes=1*1024*1024*1024,backupCount=2)
+log_file = RotatingFileHandler("log4.txt",encoding="utf-8",maxBytes=1*1024*1024*1024,backupCount=2)
 log_file.setLevel(logging.WARNING)
 
 # 5.1 设置输出格式
@@ -57,18 +57,18 @@ logger.critical("--我是critical最高级别")
 # 发送邮件
 mail_handler = SMTPHandler(
     mailhost = ('smtp.126.com',25),
-    fromaddr = 'zhixingtest1008@126.com',
-    toaddrs = "mydingyan@qq.com.com",
+    fromaddr = 'mydingyant@126.com',
+    toaddrs = "mydingyant@qq.com",   #收件人
     subject = '自动化测试log',
-    credentials = ("zhixingtest1008@126.com","LQNCTEOHFTIDUUBI")
+    credentials = ("mydingyan@126.com","PUADZYMPFMNBRWGTT")   #密码T已被修改，不会发送邮件，请自定义账号密码
 )
 
-logger.setLevel(logging.ERROR)
+logger.setLevel(logging.ERROR)   #错误等级ERROR
 logger.addHandler(mail_handler)
 
 # 默认是warning
-for i in range(10):
-    logger.warning("have a warning")
+for i in range(5):          #每循环一次，就打印一次日志，也就循环发送一次邮件
+    logger.warning("have a warning")  #warning等级不打印
 
 
 logger.error("have a errpr")

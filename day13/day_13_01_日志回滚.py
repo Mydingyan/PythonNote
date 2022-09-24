@@ -33,7 +33,7 @@ console.setFormatter(handler_f)
 logger.addHandler(console)
 
 # 5.日志文件handler回滚
-log_file = RotatingFileHandler("log3.txt",encoding="utf-8",maxBytes=1*1024*1024*1024,backupCount=2)
+log_file = RotatingFileHandler("log3.txt",encoding="utf-8",maxBytes=1*1024*1024*1024,backupCount=2)   # maxBytes 日志文件大小，超过大小后新建文件（1*1024表示1KB大小文件）  backupCount 表示保存备份文件数量
 log_file.setLevel(logging.WARNING)
 
 # 5.1 设置输出格式
@@ -45,6 +45,8 @@ logger.addHandler(log_file)
 # 6.模拟打印错误日志
 logger.debug("--我是debug最低等级")
 logger.info("--我是Info第二级别")
-logger.warning("--我是warning第三级别")
+
+for i in  range(10):
+    logger.warning("--我是warning第三级别")
 logger.error("--我是error第四级别")
 logger.critical("--我是critical最高级别")

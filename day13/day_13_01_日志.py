@@ -22,7 +22,7 @@ critical 紧急   ...最少日志
 
 四个组件（类）
 logger  计量器，日志采集
-handler 处理器，将日志发送到合适的路径
+handler 处理器，将日志发送到合适的路径   日志回滚
 fomater 格式化器，设定日志格式
 filter  过滤器
 
