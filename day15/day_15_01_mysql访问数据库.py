@@ -20,11 +20,10 @@ def mysql_db():
         host = '49.233.39.160',
         port = 3306,
         database= "lebostudent",
-        charset="utf-8",
+        charset="utf8",
         user = 'lebostudent',
-        password="lebo@22334455"
+        passwd="lebo@22334455"
     )
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     mysql_db()
-
