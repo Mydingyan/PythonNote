@@ -12,6 +12,7 @@ Python 访问MySQL数据库
 pip install pymysql
 
 ① 创建链接 ②获取游标 ③执行SQL  ④关闭游标 ⑤关闭链接
+注意：增删改查除了查，其他的都需要commit()进行提交SQL
 '''
 import pymysql
 
