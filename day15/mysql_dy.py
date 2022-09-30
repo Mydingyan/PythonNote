@@ -45,8 +45,8 @@ config = {
 class MysqlDb():
      #初始化方法
      def __init__(self):
-          self.conn = self.get_conn()   #初始化连接
-          self.cursor = self.get_cursor()   #游标
+          self.conn = self.get_conn()   #新建数据库连接初始化方法
+          self.cursor = self.get_cursor()   #新增游标初始化方法
 
      #连接数据库的方法
      def get_conn(self):
