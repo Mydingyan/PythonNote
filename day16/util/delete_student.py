@@ -14,3 +14,6 @@ def delete_name():
 def delete_studentNo():
     pass
 
+
+def delete_student():
+    pass
