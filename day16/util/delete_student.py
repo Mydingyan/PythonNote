@@ -17,14 +17,3 @@ def delete_studentNo():
 
 
 
-
-'''
-def delete_name():
-    pass
-
-
-def delete_studentNo():
-    pass
-
-'''
-
