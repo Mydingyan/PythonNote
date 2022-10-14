@@ -23,14 +23,14 @@ header = {"Content-Type":"application/x-www-form-urlencoded"}
 # print(aaa.text)
 
 # GET新闻接口
-# url = "http://v.juhe.cn/toutiao/index?type=keji&page=30&page_size=30&is_filter=1&key=ee728a1f988a62f736e1f7e098fb2db1"
+url = "http://v.juhe.cn/toutiao/index?type=keji&page=30&page_size=30&is_filter=1&key=ee728a1f988a62f736e1f7e098fb2db1"
 # url = "https://api.isoyu.com/api//Movie/playing_movie_list?start=0&count=1"
-# news = requests.get(url=url,headers=header)
-# print(news.content.decode("utf-8"))
+news = requests.get(url=url,headers=header)
+print(news.content.decode("utf-8"))
 
 
 # 成语大全
 # url = 'http://apis.juhe.cn/idioms/query?wd=三心二意&key=d05c9ab6459b83eae79d576efb1fb9ec'
-url = "http://apis.juhe.cn/fapig/character_test/questions?key=de1af1d89f0388d140c21183e5124731&level=12"
-news = requests.get(url=url,headers=header)
-print(news.content.decode("utf-8"))
+# url = "http://apis.juhe.cn/fapig/character_test/questions?key=de1af1d89f0388d140c21183e5124731&level=12"
+# news = requests.get(url=url,headers=header)
+# print(news.content.decode("utf-8"))
