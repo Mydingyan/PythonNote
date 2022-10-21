@@ -31,7 +31,6 @@ print(news.content.decode("utf-8"))
 
 
 
-
 # 成语大全
 # url = 'http://apis.juhe.cn/idioms/query?wd=三心二意&key=d05c9ab6459b83eae79d576efb1fb9ec'
 # url = "http://apis.juhe.cn/fapig/character_test/questions?key=de1af1d89f0388d140c21183e5124731&level=12"
