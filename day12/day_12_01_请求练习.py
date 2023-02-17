@@ -13,7 +13,7 @@ url = 'http://v.juhe.cn/laohuangli/d'
 # 请求参数
 kw = {"date":"2022-09-12","key":"bd24500bb902e108f3f92d1802561d94"}
 
-# 请求头
+# 请求
 header = {"Content-Type":"application/x-www-form-urlencoded"}
 
 # 发送请求
