@@ -1,0 +1,61 @@
+# css 层叠样式表
+（可以理解为 HTML为了建房子， CSS为了装修房子）
+样式离的越近
+
+## 引入方式：
+1.标签直接引用
+2. 内部样式引用
+3. 外部样式表 *.css
+
+
+## ##css语法：
+选择器{属性1：属性值1;
+       属性2：属性值2;
+       属性3：属性值3;
+}
+
+## 导入CSS样式方法
+方法一：HTML文件中导入CSS的语法，需要放置在<head>标签中，然后根据
+<link  type="text/css" rel="stylesheet" href="../../Desktop/22期课堂笔记/day18/css/shop_register.css"/>
+
+
+
+## CSS编写样式语法
+1. /*标签选择器*/   无脑给所有div层级添加相同样式
+ div{
+     width: 300px;
+     height: 500px;
+     color: #ff00df;
+ }
+
+
+ 2. /*类选择器*/      用的最多的，在HTML的div标签中，使用class="divcss_green"用来调用样式  ,一般自动化中，class表示页面样式名字，所以class定位一般更快，基本上所有的元素中都有class
+ .divcss_green{
+     color: #2bb80b
+ }
+
+
+
+ 3. /*id选择器*/   ：给所有相同id名定义样式，一般用的少（一般id名不相同，所以不常用）
+ #but{
+     color:  darkblue;
+ }
+
+
+ 4. /*层级选择器*/    类似标签选择器，给dev中的a标签添加样式（如果不再div标签中则不生效）
+ div a{
+     color: #9eb0f8;
+     font-size: 50px;
+     font-style: italic;
+ }
+
+ 5. /*背景色*/      设置所有a标签中的颜色
+ a{
+     background: #b8ff4c;
+ }
+
+## CSS的优先级
+行内样式>内部方式>外部 样式
+
+## 选择器的优先级
+id选择器>类选择器>标签选择器
