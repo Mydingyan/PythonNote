@@ -1,0 +1,45 @@
+
+ /*标签选择器*/   改变所有DIV
+ div{
+     width: 300px;
+     height: 500px;
+     color: #ff00df;
+ }
+
+
+ .div_big    /*给最大的DIV添加背景图片*/
+ {
+    background-image:url(背景图片1.jpeg)
+ }
+
+ /*类选择器*/
+ .divcss_green{
+     color: #2bb80b
+ }
+
+ .divcss_blue{
+     color: #0b30b8
+ }
+
+ /*id选择器*/    <!--给所有相同id名定义样式，一般用的少-->
+ #but{
+     color:  darkblue;
+ }
+
+ /*层级选择器*/
+ div a{
+     color: #9eb0f8;
+     font-size: 50px;
+     font-style: italic;
+ }
+
+ body a{
+     color: #eb9ef8;
+ }
+
+ /*背景色*/      /*设置所有a标签中的颜色*/
+ a{
+     background: #b8ff4c;
+ }
+ 
+ 

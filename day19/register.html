@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>乐搏商城注册</title>
+    <link type="text/css" rel="stylesheet" href="/css/shop_register.css"/>
+
+
+<!--/* 2.2 页面的script脚本嵌 */-->
+<!--    <script>-->
+<!--        function summit_1(){-->
+<!--            alert("调用了summit_1()函数")         /*点击提交弹出弹窗函数*/-->
+<!--        }-->
+<!--    </script>-->
+
+<!--### 2.3 外部引用-->
+<!--            外部JS必须在自己的脚本之前 引入  --重要的坑-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js/js_main.js">
+
+    </script>
+</head>
+
+<body>
+<div class ="div_big" style="width: 230px;height: 1300px;margin:2px; border:solid 5px dodgerblue;padding:30px;
+         position:absolute; top:10%; left:40%; ">
+    <div id="page_name">
+        <h1 id="div_reg" onclick="alert('你点击了 一个H1标签')" style=" position:relative; top:10%; left:20%; ">注册信息</h1>
+    </div>
+
+    <div class="mess c2">
+
+        <form>
+            昵称：<input id="usern" type="text" placeholder="请输入您的昵称"><br><br>
+            密码：<input id="passwd" type="password" placeholder="请输入您的密码"><br><br>
+
+            注册日期:<input id="reg_date" type="date" style="position: relative;left:20px">
+            性别：<input type="radio" name="sex" checked>男
+            <input type="radio" name="sex">女
+            <br><br>
+            爱好：<input type="checkbox" checked>编程
+            <input type="checkbox" checked>听音乐
+            <input type="checkbox">逛街
+            <br>
+            <br>
+            <div class="mess" style="width: 160px; position:relative; top:100%; left:30%; ">
+                <input onclick="summit_1()" type="submit" style="position:relative; top:100%; left:-50%; ">
+
+                <button onclick="js_scroll()" id="demo" type="button" style="position: relative;top:100%;left: -30%;">
+                    JS演示
+                </button>
+                <button id="demo_jquery" type="button" style="position: relative;top:100%;left: -30%;">Jquery演示</button>
+
+                <input type="reset" style="position:relative; top:100%; left:20%; ">
+            </div>
+        </form>
+    </div>
+    <br>
+    <a href="agreement999.html" target="_blank" style="position: relative;left: 40%">用户协议</a>
+
+</div>
+
+<script>
+
+</script>
+</body>
+</html>
