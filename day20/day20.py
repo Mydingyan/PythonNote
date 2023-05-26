@@ -59,8 +59,9 @@ driver.get("http://shop.pro.17lebo.com")
 # 设置浏览器的窗口大小  (无界面模式下，也能够调整浏览器大小）
 # driver.maximize_window()
 # sleep(3)
+# print("最小化")
 # driver.minimize_window() #窗口最小化
-# driver.set_window_size(480,900)
+driver.set_window_size(480,900)
 
 #前进后退
 # 乐博官网
@@ -83,7 +84,7 @@ driver.refresh()
 print("网页标题：",driver.title)  #print只是为了演示driver.title获取到的内容
 print("当前网址：",driver.current_url)
 print("浏览器名称：",driver.name)
-print("页面源码", driver.page_source.encode('utf-8'))
+# print("页面源码", driver.page_source.encode('utf-8'))
 
 #关闭浏览器
 sleep(5)  #等待5秒
